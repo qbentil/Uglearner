@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+        ul{
+            list-style-type: none;
+        }
+        ul li{
+            display: inline;
+            margin: auto 15px;
+        }
+    </style>
+</head>
+<body onload="checkCaps(this)">
+    
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" id="feedback"></a></li>
+    </ul>
+
+    <script>
+        const email = document.getElementById('email');
+        const feedback = document.getElementById('feedback');
+        function checkCaps(e){
+            e.addEventListener("keyup", function(event){
+                if(event.getModifierState('ShiftKey')){
+                feedback.innerHTML = "Shift key Pressed!";
+            }else{
+                feedback.innerHTML = "";   
+            }
+            })
+        }
+    </script>
+</body>
+</html>

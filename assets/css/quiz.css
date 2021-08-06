@@ -1,0 +1,125 @@
+
+.wrapper {
+    max-width: 600px;
+    margin: 20px auto
+}
+
+.content {
+    padding: 20px;
+    padding-bottom: 50px
+}
+
+.wrapper a:hover {
+    text-decoration: none
+}
+
+.wrapper a,
+.wrapper span {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(50, 141, 245);
+    padding-bottom: 30px
+}
+
+.wrapper p.text-muted {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px
+}
+
+.wrapper b {
+    font-size: 15px;
+    font-weight: bolder
+}
+
+.option {
+    display: block;
+    height: 50px;
+    background-color: #f4f4f4;
+    position: relative;
+    width: 100%
+}
+
+.option:hover {
+    background-color: #e8e8e8;
+    cursor: pointer
+}
+
+.option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+.checkmark,
+.crossmark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 22px;
+    width: 22px;
+    background-color: #f4f4f4;
+    border-radius: 2px;
+    padding: 0
+}
+
+.option:hover input~.checkmark,
+.option:hover input~.crossmark {
+    background-color: #e8e8e8
+}
+
+.option input:checked~.checkmark {
+    background-color: #79d70f
+}
+
+.option input:checked~.crossmark {
+    background-color: #ec3838
+}
+
+.checkmark:after,
+.crossmark:after {
+    content: "\2714";
+    position: absolute;
+    background-color: #79d70f;
+    display: none;
+    color: #fff;
+    padding-left: 4px;
+    width: 22px;
+    font-size: 16px
+}
+
+.crossmark:after {
+    content: "\2715";
+    background-color: #ec3838
+}
+
+.option input:checked~.checkmark:after,
+.option input:checked~.crossmark:after {
+    display: block;
+    transition: 100ms ease-out 1s
+}
+
+.wrapper p.mb-4 {
+    border-left: 3px solid green
+}
+
+.wrapper p.my-2 {
+    border-left: 3px solid red
+}
+
+.wrapper input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    background-color: #229aeb;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer
+}
+
+.wrapper input[type="submit"]:hover:focus {
+    border: none;
+    outline: none;
+    background-color: #229bebad
+}
