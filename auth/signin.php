@@ -3,6 +3,7 @@
 			<div class="account-container">
 				<div class="heading-bx left">
 					<h2 class="title-head">Login to your <span>Account</span></h2>
+					<!-- <?php echo sha1("Admin123!") ?>  SYSTEM PASSWORD-->
 					<p></p>
 				</div>	
 				<form class="contact-bx login-form" method="POST" autocomplete="off">

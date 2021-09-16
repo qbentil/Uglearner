@@ -5,6 +5,7 @@
 
 	// Get header
 	$pageLauncher->getHead("About");
+	
 
 ?>
 <div class="page-wraper">
