@@ -7,7 +7,7 @@
 						<div class="search-bx style-1">
 							<form  class="search-public-contact" autocomplete="off" method="post">
 								<div class="input-group">
-									<input class="form-control" id="contact-search-input" name = "query" placeholder="Public Feedbacks: Search" type="text">
+									<input class="form-control" id="contact-search-input" name = "query" placeholder="Private Messages: Search" type="text">
 									<span class="input-group-btn">
 										<button type="submit" class="fa fa-search text-primary"></button>
 									</span> 

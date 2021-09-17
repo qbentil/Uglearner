@@ -172,7 +172,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="" class="ttr-material-button">
+                            <a href="contacts.php?access=private" class="ttr-material-button">
                                 <span class="ttr-icon"><i class="ti-bell"></i></span>
                                 <span class="ttr-label">Notifications</span>
                             </a>

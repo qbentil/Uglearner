@@ -10,17 +10,17 @@
 								Anctive & Inactive
 							</span>
 							<span class="wc-stats">
-								<span class="counter">18</span>
+								<span class="counter">0</span>
 							</span>		
 							<div class="progress wc-progress">
-								<div class="progress-bar" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
 									Change
 								</span>
 								<span class="wc-number ml-auto">
-									78%
+									0%
 								</span>
 							</span>
 						</div>				      
@@ -36,17 +36,17 @@
 								Frequently accessing
 							</span>
 							<span class="wc-stats counter">
-								500
+								0
 							</span>		
 							<div class="progress wc-progress">
-								<div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
 									Change
 								</span>
 								<span class="wc-number ml-auto">
-									88%
+									0%
 								</span>
 							</span>
 						</div>				      
@@ -62,17 +62,17 @@
 								Quizes
 							</span>
 							<span class="wc-stats counter">
-								7000
+								0
 							</span>		
 							<div class="progress wc-progress">
-								<div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
 									Change
 								</span>
 								<span class="wc-number ml-auto">
-									65%
+									0%
 								</span>
 							</span>
 						</div>				      
@@ -88,17 +88,17 @@
 								Courses materials
 							</span>
 							<span class="wc-stats counter">
-								350 
+								0
 							</span>		
 							<div class="progress wc-progress">
-								<div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
 									Change
 								</span>
 								<span class="wc-number ml-auto">
-									90%
+									0%
 								</span>
 							</span>
 						</div>				      
