@@ -48,7 +48,7 @@
             <!-- Core Event handlers -->
             <script src="controllers/js/controllers.js"></script>
             <script src="controllers/js/handlers.js"></script>
-            <script src="controllers/js/event_handlers.js"></script>
+            <script src="controllers/js/user.js"></script>
 
             <!-- modals scripts -->
             <script src="modals/controller/processor.js"></script>
