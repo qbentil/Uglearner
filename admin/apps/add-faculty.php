@@ -6,7 +6,7 @@
 </div> -->
             <!-- Card END -->
 			<div class="row">
-                <form method="post" class="edit-course m-b30" enctype="multipart/form-data">
+                <form method="post" class="edit-course m-b30 add_faculty" enctype="multipart/form-data">
                     <div class="container rounded bg-white">
                         <div class="row">
                             <div class="col-lg-4 col-md-5 col-sm-12">
@@ -24,7 +24,7 @@
                                             <div class="image-preview-input btn">
                                                 <span class="fa fa-upload"></span>
                                                 <span class="image-preview-input-title">Browse</span>
-                                                <input type="file"  class="form-control" name="img" required />
+                                                <input type="file"  class="form-control" name="img" />
                                             </div>
                                         </span>
                                     </div>
@@ -102,7 +102,7 @@
                                                 <div class="">
                                                     <div class="row">
                                                         <div class="col-sm-12">
-                                                            <button type="submit" class="btn">Add Course</button>
+                                                            <button type="submit" class="btn" id="add_faculty_btn">Add Course</button>
                                                             <button type="reset" class="btn-secondry image-preview-alt-clear image-preview-clear">Cancel</button>
                                                         </div>
                                                     </div>
