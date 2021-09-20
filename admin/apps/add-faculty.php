@@ -24,7 +24,7 @@
                                             <div class="image-preview-input btn">
                                                 <span class="fa fa-upload"></span>
                                                 <span class="image-preview-input-title">Browse</span>
-                                                <input type="file"  class="form-control" name="img" />
+                                                <input type="file"  class="form-control" name="logo" />
                                             </div>
                                         </span>
                                     </div>
@@ -41,14 +41,26 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Name</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="text" value="">
+                                                          <input class="form-control" type="text" name="name">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Description</label>
                                                 <div class="col-sm-8">
-                                                    <textarea  class="form-control" name="description" id="" cols="30" rows="5"></textarea>
+                                                    <textarea  class="form-control" name="description" cols="30" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Email</label>
+                                                <div class="col-sm-8">
+                                                          <input class="form-control" type="email" name="email">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Address</label>
+                                                <div class="col-sm-8">
+                                                    <textarea  class="form-control" name="address" cols="30" rows="3"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -59,19 +71,19 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Facebook</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="text" value="www.facebook.com/">
+                                                    <input class="form-control" name="fbl" type="text" value="www.facebook.com/">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Twitter</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="text" value="www.twitter.com/">
+                                                    <input class="form-control" name="twl" type="text" value="www.twitter.com/">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Telegram</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="text" value="www.telegram.com/">
+                                                    <input class="form-control" name="tgl" type="text" value="www.telegram.com/">
                                                 </div>
                                             </div>
                                             

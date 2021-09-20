@@ -1,6 +1,5 @@
 $(function()
 {
-    
     // CONSTANTS
     // const form = document.getElementsByClassName("event_form ");
     // const submit_btn = $(events_form).find("#add_event_btn")
