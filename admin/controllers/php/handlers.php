@@ -1,16 +1,31 @@
 <?php
 
+// Creating New Faculty
 if(isset($_POST['action']) && $_POST['action'] == "new_event")
 {
     $name = isEmpty($_POST['name'], "Enter Faculty Name");
     $desc = isset($_POST['description'])? $_POST['description']: NULL;
     $email = isEmpty($_POST['email'], "Enter Faculty's email");
     $address = isEmpty($_POST['address'], "Enter Faculty's address");
-    $fbl = $_POST['fbl'];
-    $twl = $_POST['twl'];
-    $tgl = $_POST['tgl'];
+    $fbl = isset($_POST['fbl'])? $_POST['fbl']: NULL;
+    $twl = isset($_POST['twl'])? $_POST['twl']:NULL;
+    $tgl = isset($_POST['tgl'])? $_POST['tgl']:NULL;
     $photo = $logo = NULL;
     echo json_encode( ["status" => 1, "message" => $name, $fbl, $twl, $desc]); 
+
+    require_once "./../../../admin/core/department.php";
+    $faculty = new Department("./../../../");
+    $id = $_SESSION["user_session"];
+
+    if($faculty->new($name, $logo, $desc, $address, $email, $photo, $fbl, $tgl, $twl)){
+        echo json_encode( ["status" => 1, "message" => "Faculty '$name' has been created successfully."] );  
+        exit();
+    }else{
+            echo json_encode( ["status" => 0, "message" => "Faculty '$name' failed in action."] );  
+            exit();
+    }
+    echo json_encode( ["status" => 0, "message" => "Sorry something went wrong! Please try again later."] );   
+    // echo json_encode( ["status" => 1, "message" => "Ready to go."] );  
 }
 
 

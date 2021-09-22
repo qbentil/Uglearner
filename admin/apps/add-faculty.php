@@ -71,19 +71,19 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Facebook</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" name="fbl" type="text" value="www.facebook.com/">
+                                                    <input class="form-control" name="fbl" type="text" >
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Twitter</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" name="twl" type="text" value="www.twitter.com/">
+                                                    <input class="form-control" name="twl" type="text" >
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Telegram</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" name="tgl" type="text" value="www.telegram.com/">
+                                                    <input class="form-control" name="tgl" type="text">
                                                 </div>
                                             </div>
                                             
