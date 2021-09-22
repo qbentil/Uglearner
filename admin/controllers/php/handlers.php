@@ -11,6 +11,8 @@ if(isset($_POST['action']) && $_POST['action'] == "new_event")
     $twl = isset($_POST['twl'])? $_POST['twl']:NULL;
     $tgl = isset($_POST['tgl'])? $_POST['tgl']:NULL;
     $photo = $logo = NULL;
+    // $logo = uplaod_photo($_FILES['logo'], 'Logo');
+    // $featured_img = uplaod_photo($_FILES['featured_img'], 'Featured image');
 
     require_once "./../../../admin/core/department.php";
     $faculty = new Department("./../../../");
@@ -137,54 +139,56 @@ if(isset($_POST['action']) && $_POST['action'] == "null")
     } 
 }
 
-function uplaod_photo($image)
+function uplaod_photo($image, $identifier)
 {
-    if(!empty($image["name"]))
-    {
-        $t_image = $image["tmp_name"];
-        $target_dir = "./../../../assets/images/faculty/";  //directory to store image
-
-
-        $target_file = $target_dir . basename($t_image);
-
-
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        // Check if image file is a actual image or fake image
-        $check = getimagesize($t_image);
-        if($check !== false) {
-            echo json_encode( ["status" => 1, "message" => "File is an image - " . $check["mime"] . "."] );  
-            $flag = true;
-            exit();
-
-        } else {
-            echo json_encode( ["status" => 0, "message" => "File is not an image."] );  
-            $flag = true;
-            exit();
-        }
-        // Check file size if greater than 1MB
-        if ($_FILES["e_flyer"]["size"] > 1000000) {
-            echo json_encode( ["status" => 0, "message" => "File should be at most 1MB."] );  
-            $flag = true;
-            exit();
-        }
-        // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) {
-            echo json_encode( ["status" => 0, "message" => "Sorry, only JPG, JPEG and PNG files are allowed."] );  
-            $flag = true;
-            exit();
-        }
-
-        // Upload photo to profiles directory
-        if(!move_uploaded_file($_FILES["e_flyer"]["tmp_name"], $target_file))
-        {
-            echo json_encode( ["status" => 0, "message" => "Sorry, Your photo couldn't be uploaded. Please try again"] );  
-            $flag = true;
-            exit();
-        }
-    }else{
-        echo json_encode( ["status" => 0, "message" => "No image selected."] );  
-        $flag = true;
+    $target_dir = "./../../../assets/images/faculty/";  //directory to store image
+    $target_file = $target_dir . basename($image["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if image file is a actual image or fake image
+    $check = getimagesize($image["tmp_name"]);
+    if($check !== true) {
+        echo json_encode( ["status" => 0, "message" => "Sorry $identifier is not an actual image."] );
+        $uploadOk = 0;
         exit();
+
+    }
+    
+    
+    // Check file size
+    if ($_FILES["fileToUpload"]["size"] > 500000) {
+      echo "Sorry, your file is too large.";
+      $uploadOk = 0;
+    }
+    
+    // Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    && $imageFileType != "gif" ) {
+      $msg = "Sorry, only JPG, JPEG, PNG & GIF files are allowed for $identifier.";
+      echo json_encode( ["status" => 0, "message" => $msg] );
+      $uploadOk = 0;
+      exit();
+    }
+    
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+      $msg = "Sorry, $identifier upload failed. Try again.";
+      echo json_encode( ["status" => 0, "message" => $msg] );
+      exit();
+
+
+    // if everything is ok, try to upload file
+    } else {
+      if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+        $msg = "Sorry, there was an error uploading your file.";
+        echo json_encode( ["status" => 0, "message" => $msg] );
+        exit();
+      }
+      else{
+          return $image['name'];
+      }
     }
 }
 
