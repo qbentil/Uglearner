@@ -1,12 +1,7 @@
-<!-- <div class="sticky-top alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div> -->
             <!-- Card END -->
 			<div class="row">
                 <form method="post" class="edit-course m-b30 add_faculty" enctype="multipart/form-data">
+                    <div class="ajax-message"></div>
                     <div class="container rounded bg-white">
                         <div class="row">
                             <div class="col-lg-4 col-md-5 col-sm-12">
@@ -24,7 +19,7 @@
                                             <div class="image-preview-input btn">
                                                 <span class="fa fa-upload"></span>
                                                 <span class="image-preview-input-title">Browse</span>
-                                                <input type="file"  class="form-control" name="logo" />
+                                                <input type="file"  class="form-control" name="img" accept="image/*"   />
                                             </div>
                                         </span>
                                     </div>
