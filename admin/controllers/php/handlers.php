@@ -28,7 +28,6 @@ if(isset($_POST['action']) && $_POST['action'] == "new_faculty")
         exit();
     }
     echo json_encode( ["status" => 0, "message" => "Sorry something went wrong! Please try again later."] );   
-    // echo json_encode( ["status" => 1, "message" => "Ready to go."] );  
 }
 /**Updating a Faculty: Basic Info */
 if(isset($_POST['action']) && $_POST['action'] == 'faculty_basic_info')
@@ -37,6 +36,47 @@ if(isset($_POST['action']) && $_POST['action'] == 'faculty_basic_info')
     $desc = isset($_POST['description'])? $_POST['description']: NULL;
     $email = isEmpty($_POST['email'], "Enter Faculty's email");
     $address = isEmpty($_POST['address'], "Enter Faculty's address");
+    $id = isEmpty($_POST['id'], "Invalid Faculty. Contact Systyems Admin"); 
+
+    // Query DB
+    require_once "./../../../admin/core/department.php";
+    $faculty = new Department("./../../../");
+
+    $server_response = $faculty->updateBasicInfo($id, $name, $desc, $address, $email);
+    if($server_response == 'DEPARTMENT_UPDATED_SUCCESSFULLY'){
+        echo json_encode( ["status" => 1, "message" => "Faculty '$name' has been updated successfully."] );  
+        exit();
+    }else if ($server_response == "DEPARTMENT_UPDATE_FAILED"){
+        echo json_encode( ["status" => 0, "message" => "Faculty '$name' update Failed. Please try again."] );  
+        exit();
+    }
+    echo json_encode( ["status" => 0, "message" => "Sorry something went wrong! Please try again later."] );  
+    exit(); 
+
+}
+/**Updating Social Info */
+if(isset($_POST['action']) && $_POST['action'] == 'faculty_social_info')
+{
+    $fbl = isset($_POST['fbl'])? $_POST['fbl']: NULL;
+    $twl = isset($_POST['twl'])? $_POST['twl']:NULL;
+    $tgl = isset($_POST['tgl'])? $_POST['tgl']:NULL;
+    $id = isEmpty($_POST['id'], "Invalid Faculty. Contact Systyems Admin"); 
+
+    // Query DB
+    require_once "./../../../admin/core/department.php";
+    $faculty = new Department("./../../../");
+
+    $server_response = $faculty->updateSocials($id, $fbl, $tgl, $twl);
+    if($server_response == 'DEPARTMENT_UPDATED_SUCCESSFULLY'){
+        echo json_encode( ["status" => 1, "message" => "Faculty socials has been updated successfully."] );  
+        exit();
+    }else if ($server_response == "DEPARTMENT_UPDATE_FAILED"){
+        echo json_encode( ["status" => 0, "message" => "Faculty socials update Failed. Please try again."] );  
+        exit();
+    }
+    echo json_encode( ["status" => 0, "message" => "Sorry something went wrong! Please try again later."] );  
+    exit(); 
+
 }
 
 

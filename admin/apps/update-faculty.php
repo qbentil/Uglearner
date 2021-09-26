@@ -43,8 +43,9 @@
                         </div>
                         <div class="col-lg-8 col-md-7 col-sm-12">
                             <div class="widget-inner">
-                                <form class="edit-profile m-b30 update_faculty" method="POST">
+                                <form class="edit-profile m-b30 update_faculty_basic_ifo" method="POST">
                                     <div class="ajax-message"></div>
+                                    <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
                                     <div class="">
                                         <div class="form-group row">
                                             <div class="col-sm-12  ml-auto">
@@ -84,7 +85,9 @@
                                             </div>
                                         </div>
                                 </form>
-                                <form class="edit-profile m-b30 update_faculty" method="POST">
+                                <form class="edit-profile m-b30 update_faculty_social_ifo" method="POST">
+                                        <div class="ajax-message"></div>
+                                        <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
                                         <div class="form-group row">
                                             <div class="col-sm-12 ml-auto">
                                                 <h3 class="m-form__section text-primary">3. Social Links</h3>
@@ -93,19 +96,19 @@
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Facebook</label>
                                             <div class="col-sm-8">
-                                                <input class="form-control" type="text" value="www.facebook.com/">
+                                                <input class="form-control" type="url" name="fbl" value="<?php echo $faculty['facebook'] ?>">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Twitter</label>
                                             <div class="col-sm-8">
-                                                <input class="form-control" type="text" value="www.twitter.com/">
+                                                <input class="form-control" type="url" name="twl" value="<?php echo $faculty['twitter'] ?>">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Telegram</label>
                                             <div class="col-sm-8">
-                                                <input class="form-control" type="text" value="www.telegram.com/">
+                                                <input class="form-control" type="url" name="tgl" value="<?php echo $faculty['telegram'] ?>">
                                             </div>
                                         </div>
                                     </div>
