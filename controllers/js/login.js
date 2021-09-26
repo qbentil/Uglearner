@@ -30,3 +30,13 @@ $(login_form).submit(function(e){
     e.preventDefault();
     login();
 })
+$('#show-password').change(function(e)
+{
+    let type = $('#password').attr('type');
+    if(type == 'password')
+    {
+        $('#password').attr('type', 'text')
+    }else{
+        $('#password').attr('type', 'password')
+    }
+})
