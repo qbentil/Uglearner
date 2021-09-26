@@ -1,7 +1,8 @@
 <?php
+// MODULE 1: FACULTY
 
-// Creating New Faculty
-if(isset($_POST['action']) && $_POST['action'] == "new_event")
+/**Creating New Faculty */
+if(isset($_POST['action']) && $_POST['action'] == "new_faculty")
 {
     $name = isEmpty($_POST['name'], "Enter Faculty Name");
     $desc = isset($_POST['description'])? $_POST['description']: NULL;
@@ -29,8 +30,20 @@ if(isset($_POST['action']) && $_POST['action'] == "new_event")
     echo json_encode( ["status" => 0, "message" => "Sorry something went wrong! Please try again later."] );   
     // echo json_encode( ["status" => 1, "message" => "Ready to go."] );  
 }
+/**Updating a Faculty: Basic Info */
+if(isset($_POST['action']) && $_POST['action'] == 'faculty_basic_info')
+{
+    $name = isEmpty($_POST['name'], "Enter Faculty Name");
+    $desc = isset($_POST['description'])? $_POST['description']: NULL;
+    $email = isEmpty($_POST['email'], "Enter Faculty's email");
+    $address = isEmpty($_POST['address'], "Enter Faculty's address");
+}
 
 
+
+
+
+//events
 if(isset($_POST['action']) && $_POST['action'] == "null")
 {
     $name = $_POST["e_name"];

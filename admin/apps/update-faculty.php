@@ -4,7 +4,7 @@
     if(!isset($_GET['id'])) echo "<script> location.href = \"faculties.php\"; </script>";  //check for link validity
 
     $faculty = $vFaculty->faculty_data($_GET['id']);
-    if(!is_array($faculty)) echo "<script> location.href = \"faculties.php\"; </script>"; 
+    if(!is_array($faculty)) echo "<script> location.href = \"faculties.php\"; </script>"; // Check for Faculty info
 
 ?>
 
@@ -15,9 +15,9 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-5 col-sm-12">
                         <div class="profile-bx text-center">
-                            <form method="post" enctype="multipart/form-data">
+                            <form method="post" class="update_faculty" enctype="multipart/form-data">
                                 <div class="user-profile-thumb">
-                                    <img src="assets/images/testimonials/myself.jpg" id="preview" class=" imagePreview" alt=""/>
+                                    <img src="assets/images/schools/<?php echo $faculty['logo'] ?>" id="preview" class=" imagePreview" alt="logo"/>
                                 </div>
                                 <div class="input-group">
                                     <input type="text" class="form-control image-preview-filename image-preview py-3" placeholder = "No image selected" style="cursor: pointer !important" readonly>
@@ -43,7 +43,8 @@
                         </div>
                         <div class="col-lg-8 col-md-7 col-sm-12">
                             <div class="widget-inner">
-                                <form class="edit-profile m-b30" method="POST">
+                                <form class="edit-profile m-b30 update_faculty" method="POST">
+                                    <div class="ajax-message"></div>
                                     <div class="">
                                         <div class="form-group row">
                                             <div class="col-sm-12  ml-auto">
@@ -51,17 +52,30 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Name</label>
-                                            <div class="col-sm-8">
-                                                <input class="form-control" type="text" value="Department Name">
+                                                <label class="col-sm-4 col-form-label">Name</label>
+                                                <div class="col-sm-8">
+                                                          <input class="form-control" type="text" name="name" value="<?php echo $faculty['name'] ?>">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Description</label>
-                                            <div class="col-sm-8">
-                                                <textarea  class="form-control" name="description" id="" cols="30" rows="5"></textarea>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Description</label>
+                                                <div class="col-sm-8">
+                                                    <textarea  class="form-control" name="description" cols="30" rows="3" ><?php echo $faculty['description'] ?></textarea>
+                                                </div>
                                             </div>
-                                        </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Email</label>
+                                                <div class="col-sm-8">
+                                                    <input class="form-control" type="email" name="email" value="<?php echo $faculty['email'] ?>">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Address</label>
+                                                <div class="col-sm-8">
+                                                    <textarea  class="form-control" name="address" cols="30" rows="3"><?php echo $faculty['address'] ?></textarea>
+                                                </div>
+                                            </div>
                                         <div class="row mb-3">
                                             <div class="col-sm-4"></div>
                                             <div class="col-sm-8">
@@ -70,7 +84,7 @@
                                             </div>
                                         </div>
                                 </form>
-                                <form class="edit-profile m-b30" method="POST">
+                                <form class="edit-profile m-b30 update_faculty" method="POST">
                                         <div class="form-group row">
                                             <div class="col-sm-12 ml-auto">
                                                 <h3 class="m-form__section text-primary">3. Social Links</h3>

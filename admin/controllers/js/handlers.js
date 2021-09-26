@@ -29,7 +29,7 @@ $(function()
     $("#add_faculty_btn").on("click", function(e)
     {
         e.preventDefault();
-        let form = $(".add_faculty"), action = 'new_event'
+        let form = $(".add_faculty"), action = 'new_faculty'
         add_handler(form, action);
     })
 

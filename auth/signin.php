@@ -21,15 +21,15 @@
 							<div class="form-group">
 								<div class="input-group"> 
 									<label>Your Password</label>
-									<input name="password" type="password" class="form-control">
+									<input name="password" type="password" id="password" class="form-control" autocomplete="off">
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="form-group form-forget">
 								<div class="custom-control custom-checkbox" >
-									<input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-									<label class="custom-control-label" for="customControlAutosizing" style="cursor: pointer;">Remember me</label>
+									<input type="checkbox" class="custom-control-input" id="show-password">
+									<label class="custom-control-label" for="show-password" style="cursor: pointer;">Show Password</label>
 								</div>
 								<a href="forgot-password.php" class="ml-auto">Forgot Password?</a>
 							</div>
