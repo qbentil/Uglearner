@@ -1,4 +1,5 @@
 <?php
+	header("location: ./"); // Prevent users from signup page
 	require "auth/Auth.php";
 
 	$pageLauncher = new Auth();
