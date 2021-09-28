@@ -19,7 +19,7 @@
                                             <div class="image-preview-input btn">
                                                 <span class="fa fa-upload"></span>
                                                 <span class="image-preview-input-title">Browse</span>
-                                                <input type="file"  class="form-control" name="logo" accept="image/*"   />
+                                                <input type="file"  class="form-control" name="logo" id="logo" accept="image/*"   />
                                             </div>
                                         </span>
                                     </div>
@@ -99,7 +99,7 @@
                                                             <div class="image-preview-alt-input btn">
                                                                 <span class="fa fa-upload"></span>
                                                                 <span class="image-preview-alt-input-title">Browse</span>
-                                                                <input type="file"  class="form-control" name="featured_img"/>
+                                                                <input type="file"  class="form-control" name="featured_img" id="featured_image"/>
                                                             </div>
                                                         </span>
                                                     </div>
