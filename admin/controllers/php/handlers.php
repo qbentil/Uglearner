@@ -12,8 +12,8 @@ if(isset($_POST['action']) && $_POST['action'] == "new_faculty")
     $twl = isset($_POST['twl'])? $_POST['twl']:NULL;
     $tgl = isset($_POST['tgl'])? $_POST['tgl']:NULL;
     $photo = $logo = NULL;
-    // $logo = uplaod_photo($_FILES['logo'], 'Logo');
-    // $featured_img = uplaod_photo($_FILES['featured_img'], 'Featured image');
+    // $logo = file_upload($_FILES['logo'], 'Logo');
+    // $featured_img = file_upload($_FILES['featured_img'], 'Featured image');
 
     require_once "./../../../admin/core/department.php";
     $faculty = new Department("./../../../");
@@ -78,6 +78,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'faculty_social_info')
     exit(); 
 
 }
+
 
 
 
