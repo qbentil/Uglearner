@@ -5,7 +5,7 @@ $(function()
     {
         var response = '<div class="alert alert-warning alert-dismissable"> Processing.. </div>';
         
-        // Process photos
+        // Process Logo
         var logo_property = $("#logo").get(0).files[0];
         var logo_name = logo_property.name;
         var logo_extension = logo_name.split('.').pop().toLowerCase();
@@ -16,6 +16,7 @@ $(function()
           hasError = true;
         }
         
+        //Process featured image
         var featured_image_property = $("#featured_image").get(0).files[0];
         var featured_image_name = featured_image_property.name;
         var featured_image_extension = featured_image_name.split('.').pop().toLowerCase();
@@ -56,7 +57,6 @@ $(function()
         }
     }
 
-
     // Adding Faculty
     $(".add_faculty").on("submit", function(e)
     {
@@ -82,5 +82,7 @@ $(function()
         let form = $(this), action = 'faculty_social_info'
         add_handler(form, action);
     })
+
+
     
 })

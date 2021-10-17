@@ -389,16 +389,16 @@
 					<div class="row">
 						<div class="col-lg-12 col-sm-12 col-12 main-section">
 							<h5 class="text-center text-danger">.XLS and .CSV only</h5><br>
-							<form enctype="multipart/form-data" method="POST" name="upload-question">
+							<form enctype="multipart/form-data" class="uploadQuestions" method="POST" name="upload-question">
 								<div class="form-group">
 									<div class="file-loading">
 										<div class="form-group">
-											<input type="file" class="uploadify" name="questions-file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
+											<input type="file" class="uploadify" name="questions-file" accept=".xlsx,.xls,.csv" multiple>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
-									<button class="btn btn-block" type="submit">Upload</button>
+									<button class="btn btn-block" id="upload" type="submit">Upload</button>
 								</div>
 							</form>            
 						</div>

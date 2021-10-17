@@ -133,6 +133,7 @@ Theme Version:	1.0.0
 								dataType: 'json',
 								success : function(data)
 								{
+									// console.log(data);
 									if(data.status == 1){
 										response = '<div class="gen alert alert-success">'+data.message+'</div>';
 									}else{
@@ -165,6 +166,8 @@ Theme Version:	1.0.0
 	}(jQuery);
 	
 	/* jQuery Window Load */
-	jQuery(window).on("load", function (e) {FormFunction.afterLoadThePage();});
+	jQuery(window).on("load", function (e) {
+		FormFunction.afterLoadThePage();
+	});
 	
 })(jQuery);	
