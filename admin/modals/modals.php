@@ -390,10 +390,11 @@
 						<div class="col-lg-12 col-sm-12 col-12 main-section">
 							<h5 class="text-center text-danger">.XLS and .CSV only</h5><br>
 							<form enctype="multipart/form-data" class="uploadQuestions" method="POST" name="upload-question">
+								<div class="ajax-message"></div>
 								<div class="form-group">
 									<div class="file-loading">
 										<div class="form-group">
-											<input type="file" class="uploadify" name="questions-file" accept=".xlsx,.xls,.csv" multiple>
+											<input type="file" class="uploadify" id="upload-file" name="questions-file" accept=".xlsx,.xls,.csv" multiple>
 										</div>
 									</div>
 								</div>

@@ -37,7 +37,7 @@ function subscribe()
         method: 'POST',
         data: formData +'&action=subscribe',        
     }).done(function(result){
-        console.log(result);
+        // console.log(result);
         var data = JSON.parse(result)
         if(data.status == 1){
             response = '<div class="gen alert alert-success">'+data.message+'</div>';

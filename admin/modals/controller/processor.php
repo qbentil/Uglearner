@@ -1,5 +1,4 @@
 <?php
-
     // edit admin roles
     if(isset($_POST['action']) && $_POST['action'] =="edit_admin_role")
     {
@@ -401,5 +400,10 @@
             ";
         }
 
+    }
+
+    if(isset($_POST['action']) && $_POST['action'] == "upload_question")
+    {
+        echo "hiiiiiii";
     }
 ?>

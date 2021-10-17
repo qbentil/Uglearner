@@ -191,25 +191,30 @@ $(document).ready(function(){
     {
         var response = '<div class="alert alert-warning alert-dismissable"> Processing.. </div>';
         var hasError = false;
-        const form = $("")
+        const form = $(".uploadQuestions");
         if(!hasError)
         {
             $(form).find(".ajax-message").html(response).show('slow');
-            var formData  = $(form).serialize();
-            var url		=	"../admin/controllers/php/handlers.php";
+            var formData = new FormData();
+            var uploadFiles = document.getElementById('upload-file').files;
+            // console.log(uploadFiles[0]);
+            formData.append("questions", uploadFiles[0]);
+            console.log(formData);
+            var url		=	"../admin/modals/controller/processor.php";
             $.ajax({
                 url: url,
                 method: 'POST',
-                data: formData +'&action='+action, 
+                data: formData +'&action=upload_question', 
                 contentType:false,
                 cache:false,
                 processData:false,       
             }).done(function(result){
                 console.log(result);
+                return;
                 var data = JSON.parse(result)
                 if(data.status == 1){
                     response = '<div class="gen alert alert-success">'+data.message+'</div>';
-                    form[0].reset();
+                    // form[0].reset();
                 }else{
                     response = '<div class="err alert alert-danger">'+data.message+'</div>';
                 }
@@ -220,7 +225,7 @@ $(document).ready(function(){
 
     $("#upload").on("click", function(e){
         e.preventDefault();
-        alert("Hiiii")
+        upload_questions();
     })
 
 })
