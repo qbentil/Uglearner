@@ -38,14 +38,14 @@ function subscribe()
         data: formData +'&action=subscribe',        
     }).done(function(result){
         console.log(result);
-        // var data = JSON.parse(result)
-        // if(data.status == 1){
-        //     response = '<div class="gen alert alert-success">'+data.message+'</div>';
-        //     subscription_form[0].reset();
-        // }else{
-        //     response = '<div class="err alert alert-danger">'+data.message+'</div>';
-        // }
-        // $('.subscription-form .ajax-message').html(response).delay(5000).hide('slow');
+        var data = JSON.parse(result)
+        if(data.status == 1){
+            response = '<div class="gen alert alert-success">'+data.message+'</div>';
+            subscription_form[0].reset();
+        }else{
+            response = '<div class="err alert alert-danger">'+data.message+'</div>';
+        }
+        $('.subscription-form .ajax-message').html(response).delay(5000).hide('slow');
 
     })
 

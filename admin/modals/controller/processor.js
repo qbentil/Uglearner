@@ -181,7 +181,46 @@ $(document).ready(function(){
     $(".power-off").click(function()
     {
         // alert("Log out!!!!!!")
-        location.href ="?logout=true";
+        location.href = "?logout=true";
+    })
+
+
+
+    // MCQ HANDLER
+    function upload_questions()
+    {
+        var response = '<div class="alert alert-warning alert-dismissable"> Processing.. </div>';
+        var hasError = false;
+        const form = $("")
+        if(!hasError)
+        {
+            $(form).find(".ajax-message").html(response).show('slow');
+            var formData  = $(form).serialize();
+            var url		=	"../admin/controllers/php/handlers.php";
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: formData +'&action='+action, 
+                contentType:false,
+                cache:false,
+                processData:false,       
+            }).done(function(result){
+                console.log(result);
+                var data = JSON.parse(result)
+                if(data.status == 1){
+                    response = '<div class="gen alert alert-success">'+data.message+'</div>';
+                    form[0].reset();
+                }else{
+                    response = '<div class="err alert alert-danger">'+data.message+'</div>';
+                }
+                $(form).find(".ajax-message").html(response).delay(5000).hide('slow');;
+            })
+        }
+    }
+
+    $("#upload").on("click", function(e){
+        e.preventDefault();
+        alert("Hiiii")
     })
 
 })

@@ -2,9 +2,10 @@
     require "./../../admin/core/newsletter.php";
     require "./../../mails/email.php";
     if(isset($_POST['action']) && $_POST['action'] == 'subscribe'){
+        // echo "Hiiiiiii";
+        // exit();
         $email = htmlspecialchars(strip_tags($_POST['email'])) ;
         $flag = false;
-
 
         // validate email
         if(empty($email))
@@ -45,7 +46,7 @@
                 {
                     echo json_encode( ["status" => 1, "message" => "Thank you for subscribing to our newsletter. \n You will receive timely course updates"] );  
                     exit();
-                }else if($newsletter->subscribe($email) == "exist"){
+                }else if($newsletter->subscribe($email) == "exists"){
 
                     echo json_encode( ["status" => 0, "message" => "You are already a subscriber to this newsletter. Thank you!"] );  
                     exit();
@@ -55,9 +56,5 @@
         }
         
     }
-
-
-
-
 
 ?>
