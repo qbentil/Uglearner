@@ -196,15 +196,33 @@ $(document).ready(function(){
         {
             $(form).find(".ajax-message").html(response).show('slow');
             var formData = new FormData();
-            var uploadFiles = document.getElementById('upload-file').files;
-            // console.log(uploadFiles[0]);
-            formData.append("questions", uploadFiles[0]);
+            var uploadedFile = document.getElementById('upload-file').files[0];
+            
+            formData.append("questions", uploadedFile);
+
+            // var fileReader = new FileReader();
+            // fileReader.onload = function(event) {
+            //   var data = event.target.result;
+  
+            //   var workbook = XLSX.read(data, {
+            //     type: "binary"
+            //   });
+            //   workbook.SheetNames.forEach(sheet => {
+            //     let rowObject = XLSX.utils.sheet_to_row_object_array(
+            //       workbook.Sheets[sheet]
+            //     );
+            //     let jsonObject = JSON.stringify(rowObject);
+            //     console.log(jsonObject);
+            //   });
+            // }
+            // fileReader.readAsBinaryString(uploadedFile);
+            
             console.log(formData);
             var url		=	"../admin/modals/controller/processor.php";
             $.ajax({
                 url: url,
                 method: 'POST',
-                data: formData +'&action=upload_question', 
+                data: formData +"&action=upload_question", 
                 contentType:false,
                 cache:false,
                 processData:false,       

@@ -34,6 +34,8 @@
             <script src="https://cdn.datatables.net/1.10.24/js/dataTables.foundation.min.js"></script>
             <script src="assets/vendors/datatables/Buttons-1.7.0/js/buttons.foundation.min.js"></script>
 
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+
             <!-- intialization -->
             <script src="assets/js/demo/datatables.js"></script>
             <script src="assets/js/demo/modals.js"></script>
