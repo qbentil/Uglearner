@@ -1,4 +1,4 @@
 # Uglearner Web Application
 
-This is a Study and resourcefull App for Tertiary Students
+UgLearner is an Open Source Students module web Application. This application seeks to provide students with pre-exams questions and preparations.
 
